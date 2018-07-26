@@ -38,15 +38,19 @@ function initMap(position) {
     }
   }
   function showInformationPlaces(place){
-    const name = place.name;
-    const radius = place.vicinity;
+
     const photo = place.photos[0].getUrl({'maxWidth': 350, 'maxHeight': 350});
     
     const containerInfo = document.getElementById('infoPhoto');
-    containerInfo.innerHTML += `<h4>${name}</h4><p>${radius}</p><img src='${photo}'></img>` 
-    console.log(name);
-    console.log(radius);
-    console.log(photo);
+    containerInfo.innerHTML += `<img src='${photo}'></img>` 
+    const name = place.name;
+    const address = place.vicinity; 
+    const geomet = place.geometry.location;
+    const modalcont = document.getElementById('modalCont'); 
+    modalcont.innerHTML += `<h4>${name}</h4><p>${address}</p><a'${geomet}'></a>` 
+    //console.log(name);
+
+    //console.log(photo);
 }
 
   // marcador
