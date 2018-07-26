@@ -37,3 +37,7 @@ html, body {
     margin-bottom: 2em;
     border-radius: 10%;
 }
+.inputBuscar{
+    background-color: white;
+    height: 10%;
+}
