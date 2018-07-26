@@ -1,7 +1,6 @@
 body{
     height: 200px;
-    background: red; /* For browsers that do not support gradients */
-    background: linear-gradient(to right, rgba(255,0,0,0), rgb(0, 195, 255)); /* Standard syntax (must be last) */
+    background: linear-gradient(to right, rgba(255,0,0,0), rgb(0, 195, 255)); 
 
 }
 .cssload-box-loading {

@@ -1,21 +1,39 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
 #map{
     height: 50%;
-    width: 70%;
-    margin-top: 20%;
+    
+    margin-top: 10%;
 }
 html, body {
     height: 100%;
-   
-    background-color: gray;
+    background: linear-gradient(to right, rgba(255,0,0,0), rgb(0, 195, 255));
+    
 
   }
 .row{
     height: 100%;
-    
+    margin: 0% !important;
 
 }
-.container{
-    height: 100%;
-   
- 
+.caja{
+    height: 70%;
+    margin-top: 0% !important;
+}
+.imgFoodmap{
+    width: 25%;
+    margin-bottom: 0% !important;
+    margin-top: 1em;
+}
+.input-field{
+    margin: 0% !important;
+}
+.fondo{
+    height: 80%;
+    background-color:black;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border-radius: 10%;
 }
