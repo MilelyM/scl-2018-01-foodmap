@@ -30,11 +30,24 @@ function initMap(position) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
       for (var i = 0; i < results.length; i++) {
         createMarker(results[i]); 
-        console.log(results);
+       // console.log(results);
+       showInformationPlaces(results[i]);
+
       }
 
     }
   }
+  function showInformationPlaces(place){
+    const name = place.name;
+    const radius = place.vicinity;
+    const photo = place.photos[0].getUrl({'maxWidth': 350, 'maxHeight': 350});
+    
+    const containerInfo = document.getElementById('infoPhoto');
+    containerInfo.innerHTML += `<h4>${name}</h4><p>${radius}</p><img src='${photo}'></img>` 
+    console.log(name);
+    console.log(radius);
+    console.log(photo);
+}
 
   // marcador
   function createMarker(place) {
@@ -49,16 +62,17 @@ function initMap(position) {
       infowindow.setContent(place.name);
       
       infowindow.open(map, this);
+
      
     });
-   /* var defaultBounds = new google.maps.LatLngBounds(
+    var defaultBounds = new google.maps.LatLngBounds(
       new google.maps.LatLng(latLng));
     
     var input = document.getElementById('inputRest');
     
     var searchBox = new google.maps.places.SearchBox(input, {
       bounds: defaultBounds
-    })*/
+    })
 
 
   }
