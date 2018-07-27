@@ -29,8 +29,19 @@ function initMap(position) {
     
     if (status === google.maps.places.PlacesServiceStatus.OK) {
       for (var i = 0; i < results.length; i++) {
+        var marker = new google.maps.Marker({
+      map: map,
+      place: {
+        placeId: results[0].place_id,
+        location: results[0].geometry.location
+        
+      }
+      
+    });
+    //console.log(marker)
         createMarker(results[i]); 
        // console.log(results);
+       
        showInformationPlaces(results[i]);
 
       }
@@ -45,9 +56,10 @@ function initMap(position) {
     containerInfo.innerHTML += `<img src='${photo}'></img>` 
     const name = place.name;
     const address = place.vicinity; 
-    const geomet = place.geometry.location;
+    const placePhoto = place;
+    console.log(placePhoto)
     const modalcont = document.getElementById('modalCont'); 
-    modalcont.innerHTML += `<h4>${name}</h4><p>${address}</p><a'${geomet}'></a>` 
+    modalcont.innerHTML += `<h4>${name}</h4><p>${address}</p>${place}` 
     //console.log(name);
 
     //console.log(photo);

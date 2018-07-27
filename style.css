@@ -33,11 +33,19 @@ html, body {
 .fondo{
     height: 70%;
     background-color:black;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
     border-radius: 10%;
+    padding: 2em;
 }
 .inputBuscar{
     background-color: white;
     height: 10%;
+}
+#infoPhoto{
+  margin-top: 2em;
+
+    width: 40% !important;
+    height: 10% !important;
+    
 }
