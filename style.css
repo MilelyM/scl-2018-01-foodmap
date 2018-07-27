@@ -3,35 +3,35 @@
     padding: 0%;
 }
 #map{
-    height: 50%;
+    height: 80%;
     
-    margin-top: 10%;
 }
-html, body {
+html, body{
     height: 100%;
     background: linear-gradient(to right, rgba(255,0,0,0), rgb(0, 195, 255));
-    
 
   }
-.row{
+  /*row que encierra el logo y el input*/
+.h{
     height: 100%;
     margin: 0% !important;
+    
+}
 
-}
+/* div donde esta el mapa*/
 .caja{
-    height: 70%;
-    margin-top: 0% !important;
-}
+    height: 30%;
+    
+   }
+/* logo*/
 .imgFoodmap{
-    width: 25%;
+    width: 30%;
     margin-bottom: 0% !important;
     margin-top: 1em;
 }
-.input-field{
-    margin: 0% !important;
-}
+
 .fondo{
-    height: 70%;
+    height: 100%;
     background-color:black;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -40,13 +40,21 @@ html, body {
 }
 .inputBuscar{
     background-color: white;
-    height: 10%;
+   
 }
-#infoPhoto.modal-trigger{
-  margin-top: 2em;
-
+#infoPhoto.modal-trigger img{
+  
+align-content: center;
     width: 40% !important;
     height: 10% !important;
+    padding: 1em;
+   
     
+}
+.mood{
+   
+    background: linear-gradient(to right, rgba(255,0,0,0), rgb(0, 195, 255));
+
+    margin-top: 30%;
 }
 /**/
