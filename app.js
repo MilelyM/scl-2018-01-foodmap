@@ -72,6 +72,7 @@ function initMap(position) {
     var marker = new google.maps.Marker({
       map: map,
       position: place.geometry.location
+      
     });
     //el evento click del marcador
     google.maps.event.addListener(marker, 'click', function() {
@@ -87,7 +88,8 @@ function initMap(position) {
     var input = document.getElementById('inputRest');
     
     var searchBox = new google.maps.places.SearchBox(input, {
-      bounds: defaultBounds
+      bounds: defaultBounds,
+      
     })
 
 
