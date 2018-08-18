@@ -1,0 +1,27 @@
+{
+  "name": "scl-2018-01-foodmap",
+  "version": "0.0.1",
+  "description": "* [pagina](https://milelym.github.io/scl-2018-01-foodmap/indexSplash.html)\r * [Trello](https://trello.com/b/8YYa6zHM/foodmap)",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MilelyM/scl-2018-01-foodmap.git"
+  },
+  "keywords": [
+    "test",
+    "development"
+  ],
+  "author": "Milely Marcial",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MilelyM/scl-2018-01-foodmap/issues"
+  },
+  "homepage": "https://github.com/MilelyM/scl-2018-01-foodmap#readme",
+  "devDependencies": {
+    "eslint": "^5.3.0",
+    "mocha": "^5.2.0"
+  }
+}

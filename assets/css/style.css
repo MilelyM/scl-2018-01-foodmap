@@ -1,0 +1,76 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+#map{
+    height: 80%;
+    
+}
+html, body{
+    background-image: url('../img/mediterranean-cuisine-2378758_1920.jpg');
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+
+
+  }
+  /*row que encierra el logo y el input*/
+.h{
+    height: 100%;
+    margin: 0% !important;
+    
+}
+
+/* div donde esta el mapa*/
+.caja{
+    height: 80%;
+    width: 50%;
+    
+   }
+/* logo*/
+.imgFoodmap{
+    width: 30%;
+    margin-bottom: 0% !important;
+    margin-top: 1em;
+}
+
+.fondo{
+    height: 70%;
+    width: 100%;
+    background-color:rgba(10, 10, 10, 0.5);
+    margin-top: 1em;
+    margin-bottom: 1em;
+   
+}
+.inputBuscar{
+    background-color: rgba(10, 10, 10, 0.5);
+    width: 100% !important;
+   
+}
+#infoPhoto.modal-trigger img{
+  
+    align-content: center;
+    width: 90% !important;
+    height: 10% !important;
+    padding: 1em;
+   
+    
+}
+.mood{
+   
+    background: linear-gradient(to right, rgba(255,0,0,0));
+
+    margin-top: 30%;
+}
+/**/
+.divimg{ 
+width: 60%;
+display: inline-block;
+background-color: rgb(4, 252, 252,0.3);
+   
+}
+h3{
+    color: aliceblue;
+}

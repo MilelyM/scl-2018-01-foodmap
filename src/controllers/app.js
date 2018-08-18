@@ -4,20 +4,23 @@ var infowindow;
 navigator.geolocation.getCurrentPosition(initMap);
 
 function initMap(position) {
-    //  mapa con las coordenadas actuales
-    var lat = position.coords.latitude;
-    var lng = position.coords.longitude;
-    var latLng = {lat, lng};
+  //  mapa con las coordenadas actuales
+  var lat = position.coords.latitude;
+  var lng = position.coords.longitude;
+  var latLng = 
+  {lat,
+    lng};
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat, lng},
+    center: {lat,
+      lng},
     zoom: 15
   });
   
   infowindow = new google.maps.InfoWindow();
-  //Creamos el servicio PlaceService y enviamos la petición
-   var service = new google.maps.places.PlacesService(map);
+  // Creamos el servicio PlaceService y enviamos la petición
+  var service = new google.maps.places.PlacesService(map);
   service.nearbySearch({
-     //  localización, el radio y el tipo de lugar a obtener 
+    //  localización, el radio y el tipo de lugar a obtener 
     location: latLng,
     radius: 500,
     // types le pasamos un array con los tipos de búsqueda que queremos hacer
@@ -26,10 +29,9 @@ function initMap(position) {
 
 
   function callback(results, status) {
-    
     if (status === google.maps.places.PlacesServiceStatus.OK) {
       for (var i = 0; i < results.length; i++) {
-       /* var marker = new google.maps.Marker({
+        /* var marker = new google.maps.Marker({
       map: map,
       place: {
         placeId: results[0].place_id,
@@ -38,70 +40,81 @@ function initMap(position) {
       }
       
     });*/
-    //console.log(marker)
+        // console.log(marker)
         createMarker(results[i]); 
-       // console.log(results);
+        // console.log(results);
        
-       showInformationPlaces(results[i]);
-
+        showInformationPlaces(results[i]);
       }
-
     }
   }
-  function showInformationPlaces(place){
 
-    const photo = place.photos[0].getUrl({'maxWidth': 350, 'maxHeight': 350});
+  function showInformationPlaces(place) {
+    const photo = place.photos[0].getUrl({'maxWidth': 350,
+      'maxHeight': 350});
     
     const containerInfo = document.getElementById('infoPhoto');
-    containerInfo.innerHTML += `<img src='${photo}'></img>` 
+    containerInfo.innerHTML += `<div class="card-panel hoverable divimg section scrollspy "><img  class= "imagdiv"src='${photo}'></img> </div>
+`; 
     const name = place.name;
     const address = place.vicinity; 
 
-    //console.log(place.icon[place.id])
+    // console.log(place.icon[place.id])
     const modalcont = document.getElementById('modalCont'); 
-    modalcont.innerHTML += `<h4>${name}</h4><p>${address}</p>` 
-    //console.log(name);
+    modalcont.innerHTML += `<h4>${name}</h4><p>${address}</p>`; 
+    // console.log(name);
 
-    //console.log(photo);
-}
+    // console.log(photo);
+  }
 
   // marcador
   function createMarker(place) {
-    
-   
     var marker = new google.maps.Marker({
       map: map,
       position: place.geometry.location
       
     });
-    //el evento click del marcador
+    // el evento click del marcador
     google.maps.event.addListener(marker, 'click', function() {
       infowindow.setContent(place.name);
       
       infowindow.open(map, this);
-
-     
     });
     var defaultBounds = new google.maps.LatLngBounds(
       new google.maps.LatLng(latLng));
     
     var input = document.getElementById('inputRest');
     
-    var searchBox = new google.maps.places.SearchBox(input, {
+    /* var searchBox = new google.maps.places.SearchBox(input, {
       bounds: defaultBounds,
       
-    })
+    });
+    var searchBox = new google.maps.places.SearchBox(input);
+    map.controls.push(input);*/
+    var autocomplete = new google.maps.places.Autocomplete(input);
 
+    // Set initial restrict to the greater list of countries.
+    autocomplete.setComponentRestrictions(
+     /* {keyword: ['cafe', 'restaurant']}*/);
+    autocomplete.addListener('place_changed', onPlaceChanged); // se ejecuta la funcion con el evento
+    function onPlaceChanged() {
+      var place = autocomplete.getPlace();
+      if (place.geometry) {
+        map.panTo(place.geometry.location);
+        map.setZoom(15);
+        search();
+      } else {
+        document.getElementById('autocomplete').placeholder = 'Enter a city';
+      }
+    }
+  }
 
-  }
-    
-  }
-  
+}
 
 
 // clave de geolocalizacion AIzaSyB63wqnjhhT8rjhZmq6ej3YF7pU4XSq0-Q
 
-/*var map;
+/* var map;
 var infowindow;
 
 function initMap() {
@@ -121,7 +134,7 @@ function initMap() {
   }, callback);
 }*/
 
-/*function callback(results, status) {
+/* function callback(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
       createMarker(results[i]);
